@@ -1,0 +1,107 @@
+<div class="element">
+    <div class="photo">
+        <img src="image.jpg" alt="image.jpg">
+    </div>
+  
+    <span>Nature</span>
+    <span>Lake</span>
+  
+    <h1>Sun Set Time</h1>
+    <p class="main-text">Arrive at the lake a little before the calculated sunset time to ensure you have enough time to find a good spot, set up any equipment, and settle in for the view.</p>
+    <p class="more-text" style="display: none;">You may want to bring a blanket, some snacks, and a camera to capture the moment. The best sunset colors typically appear 10-15 minutes after the sun dips below the horizon. Check local weather conditions as clouds can enhance or diminish the viewing experience.</p>
+  
+    <div id="readmore">Read More</div>
+  </div>
+  
+  <style>
+    :root {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+  
+    .element {
+        border: 2px solid gray;
+        height: auto; /* Changed to auto for dynamic height */
+        width: 400px;
+        display: block;
+        margin: auto;
+        border-radius: 10px;
+        padding-bottom: 20px;
+    }
+  
+    .photo>img {
+        padding: 5px;
+        display: block;
+        margin: auto;
+        width: 380px;
+        height: 250px;
+        border-radius: 10px;
+    }
+  
+    span {
+        background-color: white;
+        display: inline-block;
+        color: gray;
+        border: 1px solid gray;
+        padding: 5px;
+        border-radius: 15px;
+        margin-top: 10px;
+        margin-left: 15px;
+        width: 60px;
+        text-align: center;
+        cursor: pointer;
+    }
+  
+    h1 {
+        display: block;
+        margin-left: 15px;
+    }
+  
+    p {
+        margin: 25px;
+        text-align: justify;
+    }
+  
+    #readmore {
+        background-color: gray;
+        color: white;
+        display: block;
+        margin: auto;
+        width: 100px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-weight: bolder;
+    }
+  
+    #readmore:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid black;
+        text-align: center;
+        padding: 10px;
+        border-radius: 15px;
+    }
+  </style>
+  
+  <script>
+    const readMoreBtn = document.getElementById('readmore');
+    const moreText = document.querySelector('.more-text');
+    let isExpanded = false;
+  
+    readMoreBtn.addEventListener('click', function() {
+        if (isExpanded) {
+            moreText.style.display = 'none';
+            readMoreBtn.textContent = 'Read More';
+            readMoreBtn.style.backgroundColor = 'gray';
+            readMoreBtn.style.color = 'white';
+        } else {
+            moreText.style.display = 'block';
+            readMoreBtn.textContent = 'Read Less';
+            readMoreBtn.style.backgroundColor = 'white';
+            readMoreBtn.style.color = 'black';
+            readMoreBtn.style.border = '2px solid black';
+        }
+        isExpanded = !isExpanded;
+    });
+  </script>
